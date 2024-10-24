@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Contact Form</title>
+    <style>
+        body {
+            font-family: Baskerville, serif;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        form {
+            display: inline-block; /* Keep form content aligned to the left */
+            padding: 50px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 40px;
+            width: 400px; /* Optional: Set a width for the form */
+            text-align: left; /* Align text in the form to the left */
+        }
+
+        label {
+            font-weight: normal;
+            display: block; /* Ensure the label is on its own line */
+            margin: 5px 0; /* Vertical margin for spacing */
+        }
+
+        input[type="text"], input[type="number"], input[type="radio"] {
+            margin-bottom: 1px; /* Space below each input */
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%; /* Full width for text inputs */
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .mcq-section {
+            margin-bottom: 20px;
+        }
+
+        .mcq-options {
+            margin: 10px 0; /* Space around the options */
+        }
+
+        .mcq-options label {
+            display: inline-flex; /* Inline flex to align radio and label */
+            align-items: center; /* Vertically center the items */
+            margin-bottom: 5px; /* Space between options */
+        }
+
+        .mcq-options input[type="radio"] {
+            margin-right: 10px; /* Space between radio button and label */
+        }
+
+        .button-container {
+            text-align: center; /* Center the button container */
+            margin-top: 20px; /* Space above the button container */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            border: none; /* Remove border */
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s; /* Smooth transition for hover */
+        }
+
+        button:hover {
+            background-color: #444444; /* Darker on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>REGISTER FOR FOOD DONATION</h2>
+    <form action="/submit" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="contact">Contact:</label>
+        <input type="number" id="contact" name="contact" required>
+
+        <div class="mcq-section">
+            <label>Type of food:</label>
+            <div class="mcq-options">
+                <label>
+                    <input type="radio" id="foodType1" name="foodType" value="Veg" required>
+                    Veg
+                </label>
+                <label>
+                    <input type="radio" id="foodType2" name="foodType" value="Non_Veg">
+                    Non-Veg
+                </label>
+                <label>
+                    <input type="radio" id="foodType3" name="foodType" value="Both">
+                    Both
+                </label>
+            </div>
+        </div>
+
+        <div class="mcq-section">
+            <label>Quantity of food:</label>
+            <div class="mcq-options">
+                <label>
+                    <input type="radio" id="quantity1" name="quantity" value="10-50kg" required>
+                    10-50kg
+                </label>
+                <label>
+                    <input type="radio" id="quantity2" name="quantity" value="50-75kg">
+                    50-75kg
+                </label>
+                <label>
+                    <input type="radio" id="quantity3" name="quantity" value="75-100kg">
+                    75-100kg
+                </label>
+                <label>
+                    <input type="radio" id="quantity4" name="quantity" value="More than 100kg">
+                    More than 100kg
+                </label>
+            </div>
+        </div>
+
+        <label for="location">Enter Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="pincode">Enter Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required>
+
+        <div class="button-container">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
